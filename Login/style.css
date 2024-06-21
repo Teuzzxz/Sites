@@ -1,0 +1,201 @@
+@keyframes setaD {
+    from {
+        transform: translateX(0px) scale(1);
+    }
+    to {
+        transform: translateX(8px) scale(1.1);
+    }
+}
+
+@keyframes setaE {
+    from {
+        transform: translateX(0px) scale(1);
+    }
+    to {
+        transform: translateX(-8px) scale(1.1);
+    }
+}
+
+@keyframes botao {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+
+
+* {
+    margin: 0px;
+}
+body {
+    font: normal 1em sans-serif;
+    background-image: linear-gradient(to right, rgba(75, 72, 72, 0.829)    , rgba(255, 255, 255, 0.562));
+    height: 100vh;
+}
+
+img {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px;
+    margin-right: 5px;
+}
+.escalasubindo:hover {
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+#login {
+    height: 450px;
+    width: 800px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    display: flex;
+    border:1px solid black;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.315);
+}
+#d1 {
+    height: 100%;
+    width: 360px;
+    background-color: rgba(255, 255, 255, 0.699);
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#botaoo:hover {
+    animation: botao 1s ease infinite alternate;
+}
+
+.p1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    flex: 35%;
+    letter-spacing: 3px;
+}
+.p2 {
+    flex: 30%;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    letter-spacing: 1px;
+}
+.botao {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+}
+.Sombra-envolvente {
+        box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.200);
+}
+.icones {
+    flex: 15%;
+    display: flex;
+    justify-content: center;
+}
+input {
+    border-radius: 40px;
+    width: 160px;
+    height: 30px;
+    border: none;
+    font-weight: bold ;
+}
+#trocar {
+    position: fixed; 
+    top: 50%;
+    transform: translateY(-50%);
+    left: 224px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: none;
+    display: flex;    
+}
+.sacoso {
+    width: 44px;
+    height: 44px;
+}
+#seta1 {
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 2px;
+    left: 5px;
+    width: 25px;
+    height: 20px;
+    animation: setaD 1s 1s infinite alternate;
+    animation-play-state: paused;
+}
+#seta2 {
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 20px;
+    left: 15px;
+    width: 25px;
+    height: 20px;
+    animation: setaE 1s infinite alternate;
+    animation-play-state: paused;
+    
+}
+
+
+/*------------------------------------------DIV 2---------------------------------*/
+
+#d2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 0px 10px 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.p1- {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    flex: 25%;
+    align-items: end;
+}
+
+.addinfo {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.addinfo1 {
+    flex: 25%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.imgscoladas {
+    height: 28px; 
+    width: 28px; 
+    border-radius: 50% 0% 0% 50%;
+    
+    margin: 0px;
+    background-color: rgb(255, 255, 255);
+}
+.semborda {
+    border-radius: 0% 40px 40px 0%;
+    box-shadow: 0px 0px 0px black;
+}
+
+/*--------------------------Botao de Entrar-----------------------------*/
+#entrarbutton {
+    background-color: rgb(34, 32, 32);
+    color: white;
+}
+#entrarbutton:hover {
+    animation: botao 1s ease infinite alternate;
+}

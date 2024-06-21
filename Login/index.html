@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login">
+        <div id="d1">
+
+
+            <div class="p1 todos" >
+
+                <p>BEM VINDO</p>
+
+            </div>
+
+
+            <div class="p2 todos" >
+
+                <p style="margin:10px 0px 0px 15px;" id="peg2"><u>Nao t</u>em cadastro?</p>
+
+            </div>
+
+
+            <div class="botao todos" >
+
+                <input type="button" value="Criar conta" id="botaoo" onclick="trocar()" class="Sombra-envolvente">
+
+            </div>
+
+
+            <div class="icones todos " >
+
+                <img src="Midias/icones/icons8-gmail-240.png" class="escalasubindo">
+                <img src="Midias/icones/icons8-fav-100.png" class="escalasubindo">
+                <img src="Midias/icones/icons8-whatsapp-240.png" class="escalasubindo">
+
+            </div>
+
+
+        </div>
+
+
+
+            <div id="trocar"  onmouseout="animationSetaSair()" onclick="trocar()">
+                <img src="Midias/Circulo/Sem título.png"  onclick="clicar()" class="sacoso Sombra-envolvente" >
+                <img src="Midias/Circulo/Seta.png" id="seta1" onmouseenter="animationSeta()">
+                <img src="Midias/Circulo/SetaV.png" id="seta2" onmouseenter="animationSeta()">
+            </div>
+
+
+
+        <div id="d2">
+
+
+
+            <div class="p1-">
+
+                <p id="peg1">FAÇA LOGIN</p>
+
+            </div>
+
+
+            <div class="addinfo">
+
+                <img src="https://cdn.icon-icons.com/icons2/1812/PNG/512/4213460-account-avatar-head-person-profile-user_115386.png" class="imgscoladas Sombra-envolvente">
+
+                <input type="text" value="USUÁRIO" style="text-align: center; font-weight: normal; width: 250px;" onclick="sumirU()" id="usuario" class="semborda Sombra-envolvente" >
+
+            </div>
+
+
+            <div class="addinfo1">
+
+                <img src="https://cdn.icon-icons.com/icons2/629/PNG/512/lock-outlined-padlock-symbol-for-security-interface_icon-icons.com_57803.png" class="imgscoladas Sombra-envolvente">
+
+                <input type="text" value="SENHA" style="text-align: center; font-weight: normal; width: 250px;" onclick="sumirS()" id="senha" class="semborda Sombra-envolvente">
+            
+            </div>
+
+            
+            <div class="botao">
+                <input type="button" value="Entrar" id="entrarbutton" onclick="verificacao()" class="Sombra-envolvente">
+            </div>
+
+
+            <div class="icones">
+                <img src="Midias/icones/icons8-facebook-num-círculo-240.png" class="escalasubindo">
+                <img src="Midias/icones/icons8-tiktok-256.png" class="escalasubindo">
+                <img src="Midias/icones/icons8-instagram-240.png" class="escalasubindo">
+                <img src="Midias/icones/icons8-twitter-240.png" class="escalasubindo">
+            </div>
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
