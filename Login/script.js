@@ -48,7 +48,7 @@ function verificacao() { // Ver se o entrar está funcionando
             UsuarioCerto = false
             SenhaCerta = false
             num3 = 0
-            document.location.href = 'https://teuzzxz.github.io/Sites/Login/Pagina2.html'
+            document.location.href = 'https://teuzzxz.github.io/Sites/Login/pagina2.html'
         } else if (PrimeiroUsuario == false && UsuarioCerto == true) {
             if (senha.value == array_2[0 + num3]) {
                 alert(`Bem vindo(a) ${array_1[num3]}`)
@@ -56,7 +56,7 @@ function verificacao() { // Ver se o entrar está funcionando
                 UsuarioCerto = false
                 SenhaCerta = false
                 num3 = 0
-                document.location.href = 'https://teuzzxz.github.io/Sites/Login/Pagina2.html'
+                document.location.href = 'https://teuzzxz.github.io/Sites/Login/pagina2.html'
             } else {
                 alert('Senha incorreta!')
                 PrimeiroUsuario = false
