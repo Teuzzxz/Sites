@@ -84,3 +84,16 @@ nav {
     animation: mouseporcima 2s ease alternate infinite;
     background-color: rgb(207, 207, 207);
 }
+.copiarP{
+    font-size: 1.4em !important;
+    padding: 0px !important;
+    width: 70px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.copiar {
+    width: 80px !important;
+    display: flex;
+}

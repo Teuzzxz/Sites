@@ -2,6 +2,7 @@ const ButtonNumero = [...document.getElementsByClassName('number')] // números
 const ButtonOperações = [...document.getElementsByClassName('operacoes')]
 const ButtonRes = document.getElementById('resultado')
 const ButtonApagar = document.getElementById('apagar')
+const ButtonCopiar = document.getElementsByClassName('copiarP')[0]
 let Res = document.getElementsByTagName('p')[0] // Resultado
 let sinal = true
 let decimal = true
@@ -77,4 +78,8 @@ ButtonApagar.addEventListener('click', () => { // Botao de apagar
         }
         Res.innerHTML=apagado
     }
+})
+
+ButtonCopiar.addEventListener('click', () => {
+    navigator.clipboard.writeText(Res.innerHTML)
 })
