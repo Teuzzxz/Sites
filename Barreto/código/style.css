@@ -1,0 +1,94 @@
+@media (max-width:500px){
+    h1 {
+        font-size: 1.2em !important;
+        margin-right: 20px;
+    }
+}
+@media (max-width:800px){
+    .BotãoMenu {
+        display: block !important;
+    }
+    #Menu {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute;
+        top: 37px;
+        left: 100%;
+        height: calc(100vh - 37px);
+        width: 70vw;
+        background-color: burlywood;
+        transition: 1s;
+        opacity: 20%;
+    }
+    #Menu > div {
+        flex-grow: 1 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+    #Menu>div>div{
+        display: none !important
+    }
+    h1 {
+        margin-right: 20px;
+    }
+}
+
+@font-face {
+    font-family: FontH1;
+    src: url(../Mídias/fontes/Akira\ Expanded\ Demo.otf);
+}
+
+@font-face {
+    font-family: FontP;
+    src: url(../Mídias/fontes/LEMONMILK-Light.otf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-color: grey;
+    height: 100vh;
+    overflow: hidden;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    background-color: aqua;
+    align-items: center;
+    height: 37px;
+}
+h1 {
+    font: 100 1.7em FontH1;
+}
+p {
+    font: normal 1em FontP;
+}
+#Menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    opacity: 100% !important;
+}
+#Menu>div{
+    margin-right: 40px;
+    cursor: default;
+}
+.linha{
+    width: 23px;
+    height: 3px;
+    margin-top: 3px;
+    background: #000;
+    border-radius: 10px;
+}
+.BotãoMenu {
+    display: none;
+}
+/* Animação */
+.ani{
+    transition: all 0.5s;
+}
+
