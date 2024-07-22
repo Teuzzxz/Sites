@@ -11,7 +11,7 @@
     #Menu {
         display: flex !important;
         flex-direction: column !important;
-        position: absolute;
+        position: fixed;
         top: 37px;
         left: 100%;
         height: calc(100vh - 37px);
