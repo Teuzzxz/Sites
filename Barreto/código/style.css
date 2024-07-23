@@ -21,7 +21,7 @@
         left: 100%;
         height: calc(100vh - 37px);
         width: 100vw;
-        background-color: burlywood;
+        background-color: white;
         transition: 1s;
         opacity: 20%;
     }
@@ -38,6 +38,9 @@
     }
     h1 {
         margin-right: 20px;
+    }
+    #titulo_pincipal {
+        font-size: 20vw !important;
     }
 }
 
@@ -117,6 +120,5 @@ p {
 }
 #titulo_pincipal {
     font: normal 10vw 'FontTituloP' ;
-
 }
 
