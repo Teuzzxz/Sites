@@ -51,6 +51,11 @@
     src: url(../Mídias/fontes/LEMONMILK-Light.otf);
 }
 
+@font-face {
+    font-family: FontTituloP;
+    src: url(../Mídias/fontes/Ciudad\ 397.ttf);
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -58,13 +63,15 @@
 main{
     background-image: url(../Mídias/fundo\ borrado.jpg);
     background-size: cover;
-
+    background-attachment: fixed;
 }
 body {
     height: 100vh;
     overflow-x: hidden;
 }
 header {
+    position: fixed;
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -101,14 +108,15 @@ p {
 }
 /* --------------------Resto------------------ */
 .all{
-    height: calc(100vh - 37px);
+    height: 100vh;
     display: flex;
     align-items: center;
     width: 100vw;
     justify-content: center;
     align-items: center;
 }
-.titulo_pincipal {
-    
+#titulo_pincipal {
+    font: normal 10vw 'FontTituloP' ;
+
 }
 
