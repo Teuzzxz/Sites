@@ -128,8 +128,10 @@ p {
 }
 .Barreto {
     width: 40vw;
+    transition: all 0.5s;
 }
 .Serviços{
     border: 1px solid black;
     margin-right: 50px;
+    transition: all 0.5s;
 }

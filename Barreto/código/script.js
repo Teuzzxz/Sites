@@ -69,7 +69,7 @@ Btn_Menu.addEventListener('click', () => {
 const incioBarreto = (tamX) => {
     setTimeout(() => {
         if (tamX > 950) {
-            barreto_boneco.setAttribute('style',`left:10px;opacity:100%;`)
+            barreto_boneco.setAttribute('style', `left:10px;opacity:100%;`)
         }
     })
 
