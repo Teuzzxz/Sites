@@ -1,0 +1,56 @@
+
+    HTML-
+
+<div id="barreto">
+        <div class="DivOlhos">
+            <img src="../Mídias/Olho direito baixo.png" class="OlhoDireito olhos">
+            <img src="../Mídias/Olho esquerdo baixo.png" class="OlhoEsquerdo olhos">
+        </div>
+        <img src="../Mídias/barreto.png" class="Barreto">
+    </div>
+
+
+
+    CSS-
+
+
+/* ----------Bareto---------- */
+#barreto{
+    width: 500px;
+    position: absolute;
+    left: -490px;
+    transition: all 2s;
+    opacity: 20%;
+}
+.Barreto{
+    width: 500px;
+}
+.olhos{
+    position: relative;
+    top: 107px;
+    left: 211px;
+    width: 13px;
+    margin-right:31px; 
+}
+.DivOlhos{
+    transform: rotate(-3.9deg);
+}
+
+
+    Js - 
+
+
+
+window.addEventListener('mousemove', (evt) => {
+    let graus = Math.atan2(evt.clientY,evt.clientX) * 160
+    let olhos = [...document.getElementsByClassName('olhos')]
+    if (evt.clientX < 250 || evt.clientX < 350) {
+    } else {
+        olhos.map((v, p) => {
+            v.setAttribute('style' , `transform: rotate(${graus}deg)`)
+        })  
+    }
+})
+setTimeout(() => {
+    barreto_boneco.setAttribute('style',`left:10px;opacity:100%;`)
+},500)
