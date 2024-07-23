@@ -1,15 +1,4 @@
-@media (min-width:801px){
-    #Menu{
-        opacity: 100% !important;
-    }
-}
-@media (max-width:500px){
-    h1 {
-        font-size: 1.2em !important;
-        margin-right: 20px;
-    }
-}
-@media (max-width:800px){
+@media (max-width:950px){
     .BotãoMenu {
         display: block !important;
     }
@@ -39,8 +28,20 @@
     h1 {
         margin-right: 20px;
     }
-    #titulo_pincipal {
-        font-size: 20vw !important;
+    .Serviços {
+        width:80vw;
+        height: 50vh;
+        margin-right: 0px !important;
+    }
+}
+@media (min-width:951px){
+    .all{
+        justify-content: end !important;
+    }
+    .Serviços {
+        width: 40vw;
+        height: 50vh;
+        margin-right: 40px ;
     }
 }
 
@@ -118,7 +119,17 @@ p {
     justify-content: center;
     align-items: center;
 }
-#titulo_pincipal {
-    font: normal 10vw 'FontTituloP' ;
+/* ----------Bareto---------- */
+#barreto {
+    position: absolute;
+    left: -490px;
+    transition: all 2s;
+    opacity: 20%;
 }
-
+.Barreto {
+    width: 40vw;
+}
+.Serviços{
+    border: 1px solid black;
+    margin-right: 50px;
+}
