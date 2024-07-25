@@ -1,0 +1,78 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+@font-face {
+	font-family: FontMine;
+	src: url(mídias/Minecraft.ttf);
+}
+body {
+	background-image: url(mídias/backgroundBody.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+	font-family: FontMine;
+}
+button {
+	font-family: FontMine;
+}
+.palco {
+	width: 500px;
+	height: 500px;
+	border: 4px dashed black;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: green;
+}
+/* Menu: */
+.mnu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 520px;
+	height: 520px;
+	border-radius: 20px;
+	background-color: green;
+	z-index: 1;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.437);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-shadow: 0px 0px 10px rgb(0, 61, 0);
+	letter-spacing: 2px;
+}
+.h1mnu {
+	font-size: 3em;
+	margin-bottom: 50px;
+	text-decoration-line: underline;
+}
+.pmnu {
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+.spnmnu {
+	margin-right: 10px;
+	font-size: 1.7em;
+}
+.radiomnu {
+	height: 25px;
+	width: 25px;
+}
+.btnmnu {
+	margin-top: 20px;
+	height: 40px;
+	width: 100px;
+	border-radius: 20px;
+	background-color: greenyellow;
+	border: none;
+	box-shadow: 0px 0px 10px rgb(0, 69, 0);
+}
+.btnmnu:hover {
+	transform: scale(1.07);
+	transition: all 2s;
+}

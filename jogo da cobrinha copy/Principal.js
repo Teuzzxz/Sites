@@ -9,10 +9,7 @@ let inter = null
 let bola_p = null
 let comida = null
 let score_el = null
-let pode = true
-let eleM = null
-//Classe
-
+// Classes-------------------------------------------------------------------------------------------------------
 class bola {
 	constructor() {
 		this.el = document.createElement("div")
@@ -75,7 +72,7 @@ class bola {
 	desenhar() {
 		this.el.setAttribute(
 			"style",
-			`width: 20px;height: 20px;background-color: rgb(255,255, 255) ;position:relative;left:${this.posX}px;top:${this.posY}px;`
+			`width: 18px;height: 18px;background-color: rgb(10, 238, 10) ;position:relative;left:${this.posX}px;top:${this.posY}px;border-radius:20px;border:2px solid black;`
 		)
 		palco.appendChild(this.el)
 	}
@@ -165,7 +162,9 @@ class bola {
 				"style",
 				`width:20px; height:20px; background-color: rgb(10, 238, 10) ;position:absolute; top:${
 					this.ultimaPosição[this.ultimaPosição.length - 2].posY
-				}px;left:${this.ultimaPosição[this.ultimaPosição.length - 2].posX}px;`
+				}px;left:${
+					this.ultimaPosição[this.ultimaPosição.length - 2].posX
+				}px;border-radius:50%;`
 			)
 			palco.appendChild(nagia)
 			this.corpoCobra.push(nagia)
@@ -183,6 +182,7 @@ class bola {
 		}
 	}
 }
+//funções-------------------------------------------------------------------------------------------------------
 const menu = () => {
 	const menu_el = document.createElement("div")
 	menu_el.classList.add("mnu")
@@ -233,26 +233,43 @@ const menu = () => {
 		})
 	})
 }
+const btnVoltar = () => {
+	let botao = document.createElement("button")
+	botao.classList.add("btnmnu")
+	botao.setAttribute("style", "position:absolute; top:-85px; left:200px;")
+	botao.innerHTML = "Desistir"
+	palco.appendChild(botao)
+	botao.addEventListener("click", () => {
+		clearInterval(inter)
+		bola_p.remove()
+		comida.remove()
+		document.body.appendChild(menu_ele)
+	})
+}
+const score = (sc, scM) => {
+	let div = document.createElement("div")
+	div.setAttribute("style", `position:absolute; top:-50px;`)
+
+	let score = document.createElement("p")
+	score.innerHTML = "Score: " + sc
+
+	let scoreMAX = document.createElement("p")
+	scoreMAX.innerHTML = scM
+
+	score_el = div
+
+	div.appendChild(score)
+	div.appendChild(scoreMAX)
+	palco.appendChild(div)
+}
 menu()
 btnComeçar.addEventListener("click", () => {
-	if (pode) {
-		let botaoVoltar = document.createElement("div")
-		botaoVoltar.classList.add("btnmnu")
-		botaoVoltar.innerHTML = "Voltar"
-		botaoVoltar.setAttribute(
-			"style",
-			"display:flex; justify-content:center;align-items: center; top:-50px; left:200px; position:absolute;"
-		)
-		palco.appendChild(botaoVoltar)
-		botaoVoltar.addEventListener("click", () => {
-			document.body.appendChild(menu_ele)
-			botaoVoltar.remove()
-		})
-	}
 	menu_ele.remove()
+	btnVoltar()
 
+	score(1, 0)
 	let bola_principal = new bola()
-
+	bola_p = bola_principal.el
 	window.addEventListener("keydown", (evt) => {
 		let k = evt.key
 		if (
