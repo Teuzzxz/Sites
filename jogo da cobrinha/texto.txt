@@ -1,6 +1,0 @@
-elemento novo html
-velocidade para frente- 5
-posX e posY com valores aleatórios
-dirX e dirY com 1 de inicio
-keypressionada
-velocidade tempo-escolhido conforme a dificuldade

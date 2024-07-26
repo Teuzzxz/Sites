@@ -4,38 +4,36 @@ const cobra_el = document.getElementById("cobra")
 let radios = new Array()
 let btnComeçar = document.getElementById("cobra") // provisorio
 let menu_ele = document.getElementById("cobra") // provisorio
-let dificuldade = 1
-let inter = null
-let bola_p = null
-let comida = null
-let score_el = null
-let pode = true
-let eleM = null
+let dificuldade = 1 //i
+let inter = null //i
+let bola_p = null //i
+let comida = null //i
+let botaoVoltar_let = null //i
 //Classe
 
 class bola {
 	constructor() {
 		this.el = document.createElement("div")
 		this.com = document.createElement("div")
+		this.placar = document.createElement("p")
 		this.velFrente = 20
 		this.dificuldade = this.nivel()
 		this.posX = parseInt(Math.random() * 200)
 		this.posY = parseInt(Math.random() * 400)
-		this.CposX = parseInt(Math.random() * 400)
-		this.CposY = parseInt(Math.random() * 400)
+		this.CposX = parseInt(Math.random() * 450)
+		this.CposY = parseInt(Math.random() * 450)
 		this.divisivel()
 		this.dirX = 1
 		this.dirY = 1
 		this.keypress = "d"
 		this.andarFrente = true
-		this.atraso = 1
 		this.desenhar()
 		this.movimentação()
 		this.comida()
 		this.bolinhasComidas = [0, 0]
 		this.ultimaPosição = []
 		this.corpoCobra = []
-		this.criarCbra = true
+		this.placar_function()
 	}
 	nivel() {
 		switch (dificuldade) {
@@ -81,11 +79,14 @@ class bola {
 	}
 	movimentação() {
 		let intervalo = setInterval(() => {
-			this.direção()
-			this.comeu()
-			this.colisão()
-			this.restoCobra()
+			// Intervalo
+			this.direção() // Muda de direção
+			this.comeu() // Verifica se comeu a comida e muda de lugar
+			this.colisão() // Verifica se passou das paredes
+			this.restoCobra() // Verifica quantas bolinhas comeu e adiciona ao resto da cobra
+
 			if (this.andarFrente) {
+				// Faz a cobra andar
 				this.posX = this.posX + this.velFrente * this.dirX
 				this.el.style.left = this.posX + "px"
 			}
@@ -93,8 +94,9 @@ class bola {
 				this.posY = this.posY - this.velFrente * this.dirY
 				this.el.style.top = this.posY + "px"
 			}
-		}, this.dificuldade + this.atraso)
-		inter = intervalo
+		}, this.dificuldade) // Tempo
+
+		inter = intervalo // Adiciona a let inter o intervalo para ser cancelado por fora
 	}
 	colisão() {
 		if (
@@ -102,10 +104,19 @@ class bola {
 			this.posX == -20 ||
 			(this.posY == 500) | (this.posY == -20)
 		) {
-			clearInterval(inter)
-			bola_p.remove()
-			comida.remove()
-			document.body.appendChild(menu_ele)
+			this.perdeu()
+		}
+		if (this.corpoCobra.length > 0) {
+			this.corpoCobra.map((v, p) => {
+				if (
+					this.ultimaPosição[this.ultimaPosição.length - (p + 2)].posX ==
+						this.posX &&
+					this.ultimaPosição[this.ultimaPosição.length - (p + 2)].posY ==
+						this.posY
+				) {
+					this.perdeu()
+				}
+			})
 		}
 	}
 	direção() {
@@ -137,6 +148,7 @@ class bola {
 	comeu() {
 		if (this.posX == this.CposX && this.posY == this.CposY) {
 			this.bolinhasComidas[0] += 1
+			this.placar.innerHTML = `Score: ${this.bolinhasComidas[0] + 1}`
 			this.CposX = parseInt(Math.random() * 400)
 			this.CposY = parseInt(Math.random() * 400)
 			while (!(this.CposX % 20 == 0)) {
@@ -149,6 +161,7 @@ class bola {
 				"style",
 				`width:20px; height:20px; background-Color:black; position:absolute; top:${this.CposY}px;left:${this.CposX}px`
 			)
+			console.log(this.corpoCobra)
 		}
 	}
 	restoCobra() {
@@ -169,7 +182,6 @@ class bola {
 			)
 			palco.appendChild(nagia)
 			this.corpoCobra.push(nagia)
-			score_el = this.corpoCobra.length
 		}
 		if (this.corpoCobra.length > 0) {
 			this.corpoCobra.map((v, p) => {
@@ -182,7 +194,27 @@ class bola {
 			})
 		}
 	}
+	perdeu() {
+		clearInterval(inter)
+		this.el.remove()
+		this.com.remove()
+		document.body.appendChild(menu_ele)
+		this.corpoCobra.map((val, posi) => {
+			val.remove()
+		})
+		this.ultimaPosição = []
+		this.bolinhasComidas = [0, 0]
+		botaoVoltar_let.remove()
+		this.placar.remove()
+	}
+	placar_function() {
+		this.placar.innerHTML = "Score: " + 1
+		palco.appendChild(this.placar)
+	}
 }
+
+//----------------------------------------------------------------
+//Menu
 const menu = () => {
 	const menu_el = document.createElement("div")
 	menu_el.classList.add("mnu")
@@ -234,24 +266,24 @@ const menu = () => {
 	})
 }
 menu()
-btnComeçar.addEventListener("click", () => {
-	if (pode) {
-		let botaoVoltar = document.createElement("div")
-		botaoVoltar.classList.add("btnmnu")
-		botaoVoltar.innerHTML = "Voltar"
-		botaoVoltar.setAttribute(
-			"style",
-			"display:flex; justify-content:center;align-items: center; top:-50px; left:200px; position:absolute;"
-		)
-		palco.appendChild(botaoVoltar)
-		botaoVoltar.addEventListener("click", () => {
-			document.body.appendChild(menu_ele)
-			botaoVoltar.remove()
-		})
-	}
-	menu_ele.remove()
+//----------------------------------------------------------------
 
+btnComeçar.addEventListener("click", () => {
 	let bola_principal = new bola()
+	let botaoVoltar = document.createElement("div")
+	botaoVoltar.classList.add("btnmnu")
+	botaoVoltar.innerHTML = "Voltar"
+	botaoVoltar_let = botaoVoltar
+	botaoVoltar.setAttribute(
+		"style",
+		"display:flex; justify-content:center;align-items: center; top:-50px; left:200px; position:absolute;"
+	)
+	palco.appendChild(botaoVoltar)
+	botaoVoltar.addEventListener("click", () => {
+		bola_principal.perdeu()
+	})
+
+	menu_ele.remove()
 
 	window.addEventListener("keydown", (evt) => {
 		let k = evt.key

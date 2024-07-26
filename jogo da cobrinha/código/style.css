@@ -4,10 +4,10 @@
 }
 @font-face {
 	font-family: FontMine;
-	src: url(mídias/Minecraft.ttf);
+	src: url(../mídias/Minecraft.ttf);
 }
 body {
-	background-image: url(mídias/backgroundBody.jpeg);
+	background-image: url(../mídias/backgroundBody.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 100vh;
@@ -27,7 +27,9 @@ button {
 	transform: translate(-50%, -50%);
 	background-color: green;
 }
+
 /* Menu: */
+
 .mnu {
 	position: absolute;
 	top: 50%;
