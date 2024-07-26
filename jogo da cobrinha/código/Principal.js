@@ -161,7 +161,6 @@ class bola {
 				"style",
 				`width:20px; height:20px; background-Color:black; position:absolute; top:${this.CposY}px;left:${this.CposX}px`
 			)
-			console.log(this.corpoCobra)
 		}
 	}
 	restoCobra() {
