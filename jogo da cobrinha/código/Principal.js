@@ -9,6 +9,7 @@ let inter = null //i
 let bola_p = null //i
 let comida = null //i
 let botaoVoltar_let = null //i
+let MaxScore = true
 //Classe
 
 class bola {
@@ -205,6 +206,15 @@ class bola {
 		this.bolinhasComidas = [0, 0]
 		botaoVoltar_let.remove()
 		this.placar.remove()
+		if (
+			this.corpoCobra.length + 1 >
+			window.localStorage.getItem("Maior pontuação:")
+		) {
+			window.localStorage.setItem(
+				`Maior pontuação:`,
+				this.corpoCobra.length + 1
+			)
+		}
 	}
 	placar_function() {
 		this.placar.innerHTML = "Score: " + 1
@@ -300,3 +310,8 @@ btnComeçar.addEventListener("click", () => {
 		}
 	})
 })
+
+if (MaxScore) {
+	window.localStorage.setItem("Maior pontuação:", 1)
+	MaxScore = false
+}
