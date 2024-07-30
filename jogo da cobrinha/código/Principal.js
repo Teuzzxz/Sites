@@ -9,7 +9,6 @@ let inter = null //i
 let bola_p = null //i
 let comida = null //i
 let botaoVoltar_let = null //i
-let MaxScore = true
 //Classe
 
 class bola {
@@ -310,8 +309,3 @@ btnComeçar.addEventListener("click", () => {
 		}
 	})
 })
-
-if (MaxScore) {
-	window.localStorage.setItem("Maior pontuação:", 1)
-	MaxScore = false
-}
